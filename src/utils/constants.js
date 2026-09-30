@@ -1,5 +1,4 @@
-// The utils files contain default clothing items
-const defaultClothingItems = [
+export const defaultClothingItems = [
   {
     _id: 1,
     name: "Boot",
@@ -98,4 +97,9 @@ const defaultClothingItems = [
   },
 ];
 
-export { defaultClothingItems };
+export const coordinates = {
+  latitude: 44.155425,
+  longitude: -88.497353,
+};
+
+export const APIkey = "80dbaa1a973420d558765a4bec69e01b";
