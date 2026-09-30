@@ -13,7 +13,7 @@ function App() {
   const [weatherData, setWeatherData] = useState({
     type: "",
     city: "",
-    temp: { F: 999 },
+    temp: { F: 0 },
   });
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
