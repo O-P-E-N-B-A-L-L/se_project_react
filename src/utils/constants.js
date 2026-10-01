@@ -97,6 +97,81 @@ export const defaultClothingItems = [
   },
 ];
 
+export const weatherOptions = {
+  day: {
+    default: {
+      condition: "",
+      url: new URL("../assets/weatherCards/day/default.png", import.meta.url)
+        .href,
+    },
+    clear: {
+      condition: " clear",
+      url: new URL("../assets/weatherCards/day/clear.png", import.meta.url)
+        .href,
+    },
+    clouds: {
+      condition: " cloudy",
+      url: new URL("../assets/weatherCards/day/clouds.png", import.meta.url)
+        .href,
+    },
+    fog: {
+      condition: " foggy",
+      url: new URL("../assets/weatherCards/day/fog.png", import.meta.url).href,
+    },
+    rain: {
+      condition: " rainy",
+      url: new URL("../assets/weatherCards/day/rain.png", import.meta.url).href,
+    },
+    snow: {
+      condition: " snowy",
+      url: new URL("../assets/weatherCards/day/snow.png", import.meta.url).href,
+    },
+    storm: {
+      condition: " stormy",
+      url: new URL("../assets/weatherCards/day/storm.png", import.meta.url)
+        .href,
+    },
+  },
+
+  night: {
+    default: {
+      condition: "",
+      url: new URL("../assets/weatherCards/night/default.png", import.meta.url)
+        .href,
+    },
+    clear: {
+      condition: " clear",
+      url: new URL("../assets/weatherCards/night/clear.png", import.meta.url)
+        .href,
+    },
+    clouds: {
+      condition: " cloudy",
+      url: new URL("../assets/weatherCards/night/clouds.png", import.meta.url)
+        .href,
+    },
+    fog: {
+      condition: " foggy",
+      url: new URL("../assets/weatherCards/night/fog.png", import.meta.url)
+        .href,
+    },
+    rain: {
+      condition: " rainy",
+      url: new URL("../assets/weatherCards/night/rain.png", import.meta.url)
+        .href,
+    },
+    snow: {
+      condition: " snowy",
+      url: new URL("../assets/weatherCards/night/snow.png", import.meta.url)
+        .href,
+    },
+    storm: {
+      condition: " stormy",
+      url: new URL("../assets/weatherCards/night/storm.png", import.meta.url)
+        .href,
+    },
+  },
+};
+
 export const coordinates = {
   latitude: 44.155425,
   longitude: -88.497353,

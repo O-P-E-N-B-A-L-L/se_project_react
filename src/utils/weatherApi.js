@@ -15,6 +15,10 @@ const _getWeatherType = (temp) => {
   }
 };
 
+const _isDay = ({ sunrise, sunset }, now) => {
+  return sunrise * 1000 < now && now < sunset * 1000;
+};
+
 export const getWeather = ({ latitude, longitude }, APIkey) => {
   return fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`,
@@ -26,6 +30,8 @@ export const filterWeatherData = (data) => {
   result.city = data.name;
   result.temp = { F: data.main.temp };
   result.type = _getWeatherType(result.temp.F);
+  result.condition = data.weather[0].main.toLowerCase();
+  result.isDay = _isDay(data.sys, Date.now());
 
   return result;
 };

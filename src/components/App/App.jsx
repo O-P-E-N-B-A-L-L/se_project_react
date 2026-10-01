@@ -14,6 +14,8 @@ function App() {
     type: "",
     city: "",
     temp: { F: 0 },
+    condition: "",
+    isDay: "",
   });
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
