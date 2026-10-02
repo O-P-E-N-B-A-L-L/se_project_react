@@ -2,14 +2,16 @@
   font-family: "Cabinet Grotesk";
   font-style: normal;
   font-weight: 500;
-  src: url("./fonts/CabinetGrotesk-Medium.otf") format("opentype");
+  src:
+    local("Cabinet Grotesk Medium"),
+    url("./fonts/CabinetGrotesk-Medium.woff") format("woff");
 }
 
 @font-face {
   font-family: "Cabinet Grotesk";
   font-style: normal;
   font-weight: 700;
-  src: url("./fonts/CabinetGrotesk-Bold.otf") format("opentype");
+  src:
+    local("Cabinet Grotesk Bold"),
+    url("./fonts/CabinetGrotesk-Bold.woff") format("woff");
 }
-
-/* Poppins is not relevant to the React project.  Remember to change this! */

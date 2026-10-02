@@ -8,9 +8,8 @@
 
 .weather-card__temp {
   color: #fff;
-  font-family: CabinetGrotesk;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-weight: 700;
-  font-style: bold;
   font-size: 36px;
   line-height: 40px;
   margin: 0;
