@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
   visibility: hidden;
+  font-weight: 700;
 }
 
 .modal_opened {
@@ -26,6 +27,7 @@
 
 .modal__title {
   margin: 0;
+  font-size: 1rem;
 }
 
 .modal__close {
