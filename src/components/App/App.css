@@ -1,5 +1,9 @@
 .page {
   background-color: #f3f3f3;
+  font-family: "CabinetGrotesk", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .page_content {
