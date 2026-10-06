@@ -17,6 +17,9 @@
 
 .header__button--add-clothes {
   margin: 0 20px 0 auto;
+  font-weight: 700;
+  line-height: 24px;
+  border: none;
 }
 
 .header__user-container {

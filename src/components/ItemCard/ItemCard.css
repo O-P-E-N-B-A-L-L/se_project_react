@@ -1,14 +1,21 @@
 .card {
   position: relative;
   width: 323px;
+  height: 326px;
   display: flex;
   justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 19px;
+  overflow: hidden;
 }
 
 .card__name {
   position: absolute;
   top: 15px;
   margin: 0;
+  padding: 2px 12px;
+  background-color: #fff;
+  border-radius: 4px;
   color: rgba(0, 0, 0, 0.6);
   font-weight: 700;
   font-size: 1rem;

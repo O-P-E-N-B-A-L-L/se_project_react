@@ -4,11 +4,12 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
-  gap: 21px;
+  gap: 20px;
 }
 
 .cards__text {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 100%;
+  margin: 40px 0 34px 0;
 }
