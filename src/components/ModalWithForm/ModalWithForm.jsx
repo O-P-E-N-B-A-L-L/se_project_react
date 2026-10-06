@@ -4,6 +4,11 @@ function ModalWithForm({ children, title, buttonText, activeModal, onClose }) {
   return (
     <div
       className={`modal${activeModal === "add-garment" ? " modal_opened" : ""}`}
+      onClick={(evt) => {
+        if (evt.target === evt.currentTarget) {
+          onClose();
+        }
+      }}
     >
       <div className="modal__content">
         <h2 className="modal__title">{title}</h2>

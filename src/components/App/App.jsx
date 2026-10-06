@@ -43,11 +43,25 @@ function App() {
       .catch(console.error);
   }, []);
 
+  useEffect(() => {
+    function closeOnEscape(evt) {
+      if (activeModal && evt.key === "Escape") {
+        closeActiveModal();
+      }
+    }
+
+    document.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [activeModal]);
+
   return (
     <div className="page">
       <div className="page_content">
         <Header handleAddClick={handleAddClick} weatherData={weatherData} />
-        <Main weatherData={weatherData} handleCardClick={handleCardClick} />
+        <Main handleCardClick={handleCardClick} weatherData={weatherData} />
         <Footer />
       </div>
       <ModalWithForm
