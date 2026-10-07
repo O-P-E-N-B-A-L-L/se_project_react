@@ -77,6 +77,7 @@ function App() {
             className="modal__input"
             id="name"
             placeholder="Name"
+            required
           />
         </label>
         <label htmlFor="imageUrl" className="modal__label">
@@ -86,6 +87,7 @@ function App() {
             className="modal__input"
             id="imageUrl"
             placeholder="Image URL"
+            required
           />
         </label>
         <fieldset className="modal__radio-buttons">
