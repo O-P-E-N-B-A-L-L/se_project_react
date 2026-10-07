@@ -12,9 +12,11 @@ function ModalWithForm({ children, title, buttonText, activeModal, onClose }) {
     >
       <div className="modal__content">
         <h2 className="modal__title">{title}</h2>
-        <button className="modal__close" type="button" onClick={onClose}>
-          CLOSE
-        </button>
+        <button
+          className="modal__button--close"
+          type="button"
+          onClick={onClose}
+        ></button>
         <form action="" className="modal__form">
           {children}
           <button className="modal__submit" type="submit">

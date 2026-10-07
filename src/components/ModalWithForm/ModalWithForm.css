@@ -23,17 +23,23 @@
   max-width: 496px;
   box-sizing: border-box;
   width: 100%;
+  border-radius: 20px;
 }
 
 .modal__title {
   margin: 0;
   font-size: 1rem;
+  margin: 0 0 24px;
 }
 
-.modal__close {
+.modal__button--close {
   position: absolute;
   top: 20px;
   right: 28px;
+  width: 20px;
+  height: 20px;
+  background: transparent url("../../assets/close.svg") no-repeat center/cover;
+  border: none;
 }
 
 .modal__form {
@@ -42,24 +48,51 @@
 }
 
 .modal__label {
-}
-
-.modal__label_type_radio {
+  margin: 0 0 24px;
 }
 
 .modal__input {
   display: block;
+  margin: 8px 0 0;
+  padding: 0;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #000;
 }
 
 .modal__radio-buttons {
   display: flex;
   flex-direction: column;
   border: none;
+  margin: 0;
   padding: 0;
 }
 
+.modal__legend {
+  margin: 0 0 12px;
+}
+
+.modal__label_type_radio {
+  display: flex;
+  margin: 0 0 8px;
+}
+
+.modal__label_type_radio:last-of-type {
+  margin: 0 0 32px;
+}
+
 .modal__radio-input {
+  margin: 0 8px 0 0;
 }
 
 .modal__submit {
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  align-self: flex-start;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-weight: 700;
+  line-height: 20px;
 }
