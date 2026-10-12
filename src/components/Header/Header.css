@@ -5,6 +5,7 @@
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 24px;
+  position: relative;
 }
 
 .header__logo {
@@ -15,8 +16,39 @@
   margin: 0;
 }
 
+.header__button--nav-menu {
+  background: transparent url("../../assets/hamburger.svg") no-repeat
+    center/cover;
+  border: none;
+  height: 44px;
+  width: 44px;
+  padding: 0;
+  position: absolute;
+  top: 18px;
+  right: 16px;
+  visibility: hidden;
+}
+
+.header__nav-wrapper {
+  display: flex;
+  margin: 0 0 0 auto;
+  position: relative;
+}
+
+.header__button--close {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  width: 21px;
+  height: 21px;
+  background: transparent url("../../assets/close_dark.svg") no-repeat
+    center/cover;
+  border: none;
+  padding: 0;
+}
+
 .header__button--add-clothes {
-  margin: 0 20px 0 auto;
+  margin: 0 20px 0 0;
   font-weight: 700;
   line-height: 24px;
   border: none;
@@ -31,4 +63,29 @@
 .header__username {
   margin: 0;
   line-height: 100%;
+}
+
+@media screen and (max-width: 750px) {
+  .header__button--nav-menu {
+    visibility: visible;
+  }
+
+  .header__nav-wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    height: 208px;
+    width: 100%;
+    gap: 24px;
+    position: absolute;
+    top: 18px;
+    margin: 0;
+    visibility: hidden;
+    z-index: 1;
+  }
+
+  .header__nav-wrapper_opened {
+    visibility: visible;
+  }
 }

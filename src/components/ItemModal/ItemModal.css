@@ -10,15 +10,11 @@
   line-height: 24px;
 }
 
-.modal__button--close {
-  position: absolute;
+.modal__button--close_type_light {
   top: 24px;
   right: 24px;
-  width: 16px;
-  height: 16px;
   background: transparent url("../../assets/close_light.svg") no-repeat
     center/cover;
-  border: none;
 }
 
 .modal__image {

@@ -12,8 +12,9 @@ function ItemModal({ card, activeModal, onClose }) {
     >
       <div className="modal__content modal__content_type_image">
         <button
-          className="modal__button--close"
+          className="modal__button--close modal__button--close_type_light"
           type="button"
+          aria-label="Close"
           onClick={onClose}
         ></button>
         <img src={card.link} alt={card.name} className="modal__image" />

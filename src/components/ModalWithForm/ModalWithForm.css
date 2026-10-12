@@ -34,13 +34,17 @@
 
 .modal__button--close {
   position: absolute;
-  top: 20px;
-  right: 28px;
+  padding: 0;
+  border: none;
   width: 16px;
   height: 16px;
-  background: transparent url("../../assets/close_dark.svg") no-repeat
+}
+
+.modal__button--close_type_medium {
+  top: 20px;
+  right: 28px;
+  background: transparent url("../../assets/close_medium.svg") no-repeat
     center/cover;
-  border: none;
 }
 
 .modal__form {
