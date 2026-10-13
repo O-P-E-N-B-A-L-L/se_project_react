@@ -1,11 +1,10 @@
 .card {
+  aspect-ratio: 325 / 328;
   position: relative;
-  width: 323px;
-  height: 326px;
-  display: flex;
-  justify-content: center;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 19px;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
 }
 
@@ -23,4 +22,5 @@
 
 .card__image {
   width: 100%;
+  object-fit: cover;
 }
