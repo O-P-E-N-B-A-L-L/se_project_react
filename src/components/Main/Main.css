@@ -14,6 +14,7 @@
   font-size: 1.25rem;
   line-height: 100%;
   margin: 40px 0 34px 0;
+  width: fit-content;
 }
 
 @media screen and (max-width: 1095px) {
@@ -30,6 +31,14 @@
 
 @media screen and (max-width: 577px) {
   .cards__list {
-    grid-template-columns: minmax(239px, 325px);
+    grid-template-columns: repeat(2, minmax(164px, 239px));
+    column-gap: 15px;
+    row-gap: 16px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .cards__text {
+    margin: 32px auto 20px;
   }
 }

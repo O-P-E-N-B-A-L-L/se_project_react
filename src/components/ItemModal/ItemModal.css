@@ -3,11 +3,13 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  min-height: 463px;
   max-width: 498px;
   padding: 0;
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 24px;
+  margin: 0 16px;
 }
 
 .modal__button--close_type_light {
@@ -36,4 +38,20 @@
 
 .modal__weather {
   margin: 0;
+}
+
+@media screen and (max-width: 450px) {
+  .modal__content_type_image {
+    border-radius: 12px;
+  }
+
+  .modal__button--close_type_light {
+    background-image: url("../../assets/close_dark.svg");
+    top: 24px;
+    right: 24px;
+  }
+
+  .modal__footer {
+    padding: 20px 0 40px 20px;
+  }
 }
