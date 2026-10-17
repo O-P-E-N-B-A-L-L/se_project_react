@@ -8,6 +8,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 import ItemModal from "../ItemModal/ItemModal.jsx";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
 import { coordinates, APIkey } from "../../utils/constants.js";
+import { defaultClothingItems } from "../../utils/constants.js";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -19,6 +20,12 @@ function App() {
   });
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
+  const [clothingData, setClothingData] = useState([...defaultClothingItems]);
+  const [formData, setFormData] = useState({
+    name: "",
+    imageUrl: "",
+    weatherType: "",
+  });
 
   const handleAddClick = () => {
     setActiveModal("add-garment");
@@ -27,6 +34,32 @@ function App() {
   const handleCardClick = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
+  };
+
+  const handleInputChange = (evt) => {
+    const { name, value } = evt.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleAddCardSubmit = (evt) => {
+    evt.preventDefault();
+
+    const cardData = {
+      _id: Math.max(...clothingData.map((item) => item._id), 0) + 1,
+      name: formData.name,
+      link: formData.imageUrl,
+      weather: formData.weatherType,
+    };
+
+    setClothingData([...clothingData, cardData]);
+
+    setFormData({
+      name: "",
+      imageUrl: "",
+      weatherType: "",
+    });
+
+    closeActiveModal();
   };
 
   const closeActiveModal = () => {
@@ -60,7 +93,11 @@ function App() {
     <div className="page">
       <div className="page_content">
         <Header handleAddClick={handleAddClick} weatherData={weatherData} />
-        <Main handleCardClick={handleCardClick} weatherData={weatherData} />
+        <Main
+          handleCardClick={handleCardClick}
+          weatherData={weatherData}
+          clothingData={clothingData}
+        />
         <Footer />
       </div>
       <ModalWithForm
@@ -68,6 +105,7 @@ function App() {
         buttonText="Add garment"
         activeModal={activeModal}
         onClose={closeActiveModal}
+        onSubmit={handleAddCardSubmit}
       >
         <label htmlFor="name" className="modal__label">
           Name{" "}
@@ -75,8 +113,11 @@ function App() {
             type="text"
             className="modal__input"
             id="name"
+            name="name"
             placeholder="Name"
             required
+            onChange={handleInputChange}
+            value={formData.name}
           />
         </label>
         <label htmlFor="imageUrl" className="modal__label">
@@ -85,8 +126,11 @@ function App() {
             type="url"
             className="modal__input"
             id="imageUrl"
+            name="imageUrl"
             placeholder="Image URL"
             required
+            onChange={handleInputChange}
+            value={formData.imageUrl}
           />
         </label>
         <fieldset className="modal__radio-buttons">
@@ -96,8 +140,11 @@ function App() {
               type="radio"
               className="modal__radio-input"
               id="hot"
-              name="selectWeather"
+              value="hot"
+              name="weatherType"
               required
+              onChange={handleInputChange}
+              checked={formData.weatherType === "hot"}
             />{" "}
             Hot
           </label>
@@ -109,8 +156,11 @@ function App() {
               type="radio"
               className="modal__radio-input"
               id="warm"
-              name="selectWeather"
+              value="warm"
+              name="weatherType"
               required
+              onChange={handleInputChange}
+              checked={formData.weatherType === "warm"}
             />{" "}
             Warm
           </label>
@@ -122,8 +172,11 @@ function App() {
               type="radio"
               className="modal__radio-input"
               id="cold"
-              name="selectWeather"
+              value="cold"
+              name="weatherType"
               required
+              onChange={handleInputChange}
+              checked={formData.weatherType === "cold"}
             />{" "}
             Cold
           </label>

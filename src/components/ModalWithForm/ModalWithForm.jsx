@@ -1,6 +1,13 @@
 import "./ModalWithForm.css";
 
-function ModalWithForm({ children, title, buttonText, activeModal, onClose }) {
+function ModalWithForm({
+  children,
+  title,
+  buttonText,
+  activeModal,
+  onClose,
+  onSubmit,
+}) {
   return (
     <div
       className={`modal${activeModal === "add-garment" ? " modal_opened" : ""}`}
@@ -18,7 +25,7 @@ function ModalWithForm({ children, title, buttonText, activeModal, onClose }) {
           aria-label="Close"
           onClick={onClose}
         ></button>
-        <form action="" className="modal__form">
+        <form action="" className="modal__form" noValidate onSubmit={onSubmit}>
           {children}
           <button className="modal__button--submit" type="submit">
             {buttonText}
