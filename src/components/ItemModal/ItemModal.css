@@ -1,4 +1,4 @@
-.modal__content_type_image {
+.modal__content--type-image {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -12,7 +12,7 @@
   margin: 0 16px;
 }
 
-.modal__button--close_type_light {
+.modal__close-button--type-light {
   top: 24px;
   right: 24px;
   background: transparent url("../../assets/close_light.svg") no-repeat
@@ -41,11 +41,11 @@
 }
 
 @media screen and (max-width: 450px) {
-  .modal__content_type_image {
+  .modal__content--type-image {
     border-radius: 12px;
   }
 
-  .modal__button--close_type_light {
+  .modal__close-button--type-light {
     background-image: url("../../assets/close_dark.svg");
     top: 24px;
     right: 24px;

@@ -131,7 +131,7 @@ function App() {
 
   return (
     <div className="page">
-      <div className="page_content">
+      <div className="page__content">
         <Header handleAddClick={handleAddClick} weatherData={weatherData} />
         <Main
           handleCardClick={handleCardClick}
@@ -150,7 +150,7 @@ function App() {
       >
         <label
           htmlFor="name"
-          className={`modal__label${formErrors.name ? " modal__label-error" : ""}`}
+          className={`modal__label${formErrors.name ? " modal__label--error" : ""}`}
         >
           Name*{" "}
           <span
@@ -161,7 +161,7 @@ function App() {
           </span>
           <input
             type="text"
-            className={`modal__input${formErrors.name ? " modal__input-error" : ""}`}
+            className={`modal__input${formErrors.name ? " modal__input--error" : ""}`}
             id="name"
             name="name"
             placeholder="Name"
@@ -172,7 +172,7 @@ function App() {
         </label>
         <label
           htmlFor="imageUrl"
-          className={`modal__label${formErrors.imageUrl ? " modal__label-error" : ""}`}
+          className={`modal__label${formErrors.imageUrl ? " modal__label--error" : ""}`}
         >
           Image*{" "}
           <span
@@ -183,7 +183,7 @@ function App() {
           </span>
           <input
             type="url"
-            className={`modal__input${formErrors.imageUrl ? " modal__input-error" : ""}`}
+            className={`modal__input${formErrors.imageUrl ? " modal__input--error" : ""}`}
             id="imageUrl"
             name="imageUrl"
             placeholder="Image URL"
@@ -194,7 +194,10 @@ function App() {
         </label>
         <fieldset className="modal__radio-buttons">
           <legend className="modal__legend">Select the weather type:</legend>
-          <label htmlFor="hot" className="modal__label modal__label_type_radio">
+          <label
+            htmlFor="hot"
+            className="modal__label modal__label--type-radio"
+          >
             <input
               type="radio"
               className="modal__radio-input"
@@ -209,7 +212,7 @@ function App() {
           </label>
           <label
             htmlFor="warm"
-            className="modal__label modal__label_type_radio"
+            className="modal__label modal__label--type-radio"
           >
             <input
               type="radio"
@@ -225,7 +228,7 @@ function App() {
           </label>
           <label
             htmlFor="cold"
-            className="modal__label modal__label_type_radio"
+            className="modal__label modal__label--type-radio"
           >
             <input
               type="radio"

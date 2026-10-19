@@ -16,7 +16,7 @@
     opacity 0.2s linear;
 }
 
-.modal_opened {
+.modal--opened {
   visibility: visible;
   opacity: 1;
   transition-delay: 0s;
@@ -37,7 +37,7 @@
   margin: 0 0 24px;
 }
 
-.modal__button--close {
+.modal__close-button {
   position: absolute;
   padding: 0;
   border: none;
@@ -45,11 +45,11 @@
   height: 16px;
 }
 
-.modal__button--close:hover {
+.modal__close-button:hover {
   cursor: pointer;
 }
 
-.modal__button--close_type_medium {
+.modal__close-button--type-medium {
   top: 20px;
   right: 28px;
   background: transparent url("../../assets/close_medium.svg") no-repeat
@@ -65,7 +65,7 @@
   margin: 0 0 24px;
 }
 
-.modal__label-error {
+.modal__label--error {
   color: red;
 }
 
@@ -87,7 +87,7 @@
   outline: none;
 }
 
-.modal__input-error {
+.modal__input--error {
   color: red;
   border-color: red;
 }
@@ -104,21 +104,21 @@
   margin: 0 0 12px;
 }
 
-.modal__label_type_radio {
+.modal__label--type-radio {
   display: flex;
   margin: 0 0 8px;
   color: rgba(0, 0, 0, 0.5);
 }
 
-.modal__label_type_radio:last-of-type {
+.modal__label--type-radio:last-of-type {
   margin: 0 0 32px;
 }
 
-.modal__label_type_radio:hover {
+.modal__label--type-radio:hover {
   cursor: pointer;
 }
 
-.modal__label_type_radio:has(input:checked) {
+.modal__label--type-radio:has(input:checked) {
   color: #000;
   accent-color: #000;
 }
@@ -131,7 +131,7 @@
   cursor: pointer;
 }
 
-.modal__button--submit {
+.modal__submit-button {
   box-sizing: border-box;
   background-color: #000;
   color: #fff;
@@ -144,12 +144,12 @@
   transition: background-color 0.2s linear;
 }
 
-.modal__button--submit:not(.is-disabled):hover {
+.modal__submit-button:not(.modal__submit-button--disabled):hover {
   background-color: rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }
 
-.is-disabled {
+.modal__submit-button--disabled {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -165,12 +165,12 @@
     margin: 0 0 37px;
   }
 
-  .modal__button--close {
+  .modal__close-button {
     width: 21px;
     height: 21px;
   }
 
-  .modal__button--close_type_medium {
+  .modal__close-button--type-medium {
     right: 20px;
   }
 
@@ -178,11 +178,11 @@
     margin: 0 0 30px;
   }
 
-  .modal__label_type_radio:last-of-type {
+  .modal__label--type-radio:last-of-type {
     margin: 0;
   }
 
-  .modal__button--submit {
+  .modal__submit-button {
     width: 100%;
     height: 44px;
   }

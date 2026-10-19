@@ -1,5 +1,6 @@
-.card {
+.item-card {
   aspect-ratio: 325 / 328;
+  cursor: pointer;
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 19px;
@@ -8,11 +9,7 @@
   overflow: hidden;
 }
 
-.card:hover {
-  cursor: pointer;
-}
-
-.card__name {
+.item-card__name {
   position: absolute;
   top: 15px;
   margin: 0;
@@ -24,13 +21,13 @@
   font-size: 1rem;
 }
 
-.card__image {
+.item-card__image {
   width: 100%;
   object-fit: cover;
 }
 
 @media screen and (max-width: 577px) {
-  .card {
+  .item-card {
     aspect-ratio: 1;
   }
 }

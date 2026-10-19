@@ -37,21 +37,21 @@ function Header({ handleAddClick, weatherData }) {
         {currentDate}, {weatherData.city}
       </p>
       <button
-        className="header__button--nav-menu"
+        className="header__nav-menu-button"
         type="button"
         onClick={toggleMenuVisibility}
         aria-label="Open navigation menu"
       ></button>
       <div
-        className={`header__nav-wrapper${isMenuOpen ? " header__nav-wrapper_opened" : ""}`}
+        className={`header__nav-wrapper${isMenuOpen ? " header__nav-wrapper--opened" : ""}`}
       >
         <button
-          className="header__button--close"
+          className="header__close-button"
           type="button"
           onClick={toggleMenuVisibility}
         ></button>
         <button
-          className="header__button--add-clothes"
+          className="header__add-clothes-button"
           type="button"
           onClick={() => {
             handleAddClick();

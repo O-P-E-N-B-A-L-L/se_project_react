@@ -3,16 +3,16 @@ import "./ItemModal.css";
 function ItemModal({ card, activeModal, onClose }) {
   return (
     <div
-      className={`modal${activeModal === "preview" ? " modal_opened" : ""}`}
+      className={`modal${activeModal === "preview" ? " modal--opened" : ""}`}
       onClick={(evt) => {
         if (evt.target === evt.currentTarget) {
           onClose();
         }
       }}
     >
-      <div className="modal__content modal__content_type_image">
+      <div className="modal__content modal__content--type-image">
         <button
-          className="modal__button--close modal__button--close_type_light"
+          className="modal__close-button modal__close-button--type-light"
           type="button"
           aria-label="Close"
           onClick={onClose}

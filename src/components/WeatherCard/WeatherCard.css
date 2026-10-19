@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.weather-card__temp {
+.weather-card__temperature {
   color: #fff;
   font-weight: 700;
   font-size: 2.25rem;
