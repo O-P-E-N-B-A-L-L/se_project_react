@@ -26,6 +26,17 @@ function App() {
     imageUrl: "",
     weatherType: "",
   });
+  const [formErrors, setFormErrors] = useState({
+    name: "",
+    imageUrl: "",
+  });
+
+  const formHasErrors =
+    formErrors.name ||
+    formErrors.imageUrl ||
+    formData.name === "" ||
+    formData.imageUrl === "" ||
+    formData.weatherType === "";
 
   const handleAddClick = () => {
     setActiveModal("add-garment");
@@ -39,6 +50,30 @@ function App() {
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
     setFormData({ ...formData, [name]: value });
+
+    if (name === "name" && value.length < 3) {
+      setFormErrors({
+        ...formErrors,
+        name: `(Please enter 3 or more characters)`,
+      });
+    } else if (name === "name" && value.length >= 3) {
+      setFormErrors({
+        ...formErrors,
+        name: "",
+      });
+    }
+
+    if (name === "imageUrl" && !URL.canParse(value)) {
+      setFormErrors({
+        ...formErrors,
+        imageUrl: "(This is not a valid image link)",
+      });
+    } else if (name === "imageUrl" && URL.canParse(value)) {
+      setFormErrors({
+        ...formErrors,
+        imageUrl: "",
+      });
+    }
   };
 
   const handleAddCardSubmit = (evt) => {
@@ -57,6 +92,11 @@ function App() {
       name: "",
       imageUrl: "",
       weatherType: "",
+    });
+
+    setFormErrors({
+      name: "",
+      imageUrl: "",
     });
 
     closeActiveModal();
@@ -104,14 +144,24 @@ function App() {
         title="New garment"
         buttonText="Add garment"
         activeModal={activeModal}
+        formHasErrors={formHasErrors}
         onClose={closeActiveModal}
         onSubmit={handleAddCardSubmit}
       >
-        <label htmlFor="name" className="modal__label">
-          Name{" "}
+        <label
+          htmlFor="name"
+          className={`modal__label${formErrors.name ? " modal__label-error" : ""}`}
+        >
+          Name*{" "}
+          <span
+            id="card-name-input-error"
+            className="modal__input-error-message"
+          >
+            {formErrors.name}
+          </span>
           <input
             type="text"
-            className="modal__input"
+            className={`modal__input${formErrors.name ? " modal__input-error" : ""}`}
             id="name"
             name="name"
             placeholder="Name"
@@ -120,11 +170,20 @@ function App() {
             value={formData.name}
           />
         </label>
-        <label htmlFor="imageUrl" className="modal__label">
-          Image{" "}
+        <label
+          htmlFor="imageUrl"
+          className={`modal__label${formErrors.imageUrl ? " modal__label-error" : ""}`}
+        >
+          Image*{" "}
+          <span
+            id="card-url-input-error"
+            className="modal__input-error-message"
+          >
+            {formErrors.imageUrl}
+          </span>
           <input
             type="url"
-            className="modal__input"
+            className={`modal__input${formErrors.imageUrl ? " modal__input-error" : ""}`}
             id="imageUrl"
             name="imageUrl"
             placeholder="Image URL"

@@ -33,7 +33,6 @@
 }
 
 .modal__title {
-  margin: 0;
   font-size: 1rem;
   margin: 0 0 24px;
 }
@@ -44,6 +43,10 @@
   border: none;
   width: 16px;
   height: 16px;
+}
+
+.modal__button--close:hover {
+  cursor: pointer;
 }
 
 .modal__button--close_type_medium {
@@ -62,6 +65,10 @@
   margin: 0 0 24px;
 }
 
+.modal__label-error {
+  color: red;
+}
+
 .modal__input {
   display: block;
   margin: 8px 0 0;
@@ -74,6 +81,15 @@
 
 .modal__input::placeholder {
   color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__input:focus {
+  outline: none;
+}
+
+.modal__input-error {
+  color: red;
+  border-color: red;
 }
 
 .modal__radio-buttons {
@@ -98,6 +114,10 @@
   margin: 0 0 32px;
 }
 
+.modal__label_type_radio:hover {
+  cursor: pointer;
+}
+
 .modal__label_type_radio:has(input:checked) {
   color: #000;
   accent-color: #000;
@@ -107,9 +127,13 @@
   margin: 0 8px 0 0;
 }
 
+.modal__radio-input:hover {
+  cursor: pointer;
+}
+
 .modal__button--submit {
   box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #000;
   color: #fff;
   align-self: flex-start;
   border: none;
@@ -117,6 +141,16 @@
   padding: 8px 16px;
   font-weight: 700;
   line-height: 20px;
+  transition: background-color 0.2s linear;
+}
+
+.modal__button--submit:not(.is-disabled):hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.is-disabled {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 @media screen and (max-width: 450px) {

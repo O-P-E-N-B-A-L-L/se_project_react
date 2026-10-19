@@ -5,6 +5,7 @@ function ModalWithForm({
   title,
   buttonText,
   activeModal,
+  formHasErrors,
   onClose,
   onSubmit,
 }) {
@@ -27,7 +28,11 @@ function ModalWithForm({
         ></button>
         <form action="" className="modal__form" noValidate onSubmit={onSubmit}>
           {children}
-          <button className="modal__button--submit" type="submit">
+          <button
+            className={`modal__button--submit${formHasErrors ? " is-disabled" : ""}`}
+            type="submit"
+            disabled={formHasErrors}
+          >
             {buttonText}
           </button>
         </form>

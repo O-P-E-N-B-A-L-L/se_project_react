@@ -29,6 +29,10 @@
   visibility: hidden;
 }
 
+.header__button--nav-menu:hover {
+  cursor: pointer;
+}
+
 .header__nav-wrapper {
   display: flex;
   margin: 0 0 0 auto;
@@ -36,6 +40,7 @@
 }
 
 .header__button--close {
+  visibility: hidden;
   position: absolute;
   top: 11px;
   right: 11px;
@@ -47,11 +52,20 @@
   padding: 0;
 }
 
+.header__button--close:hover {
+  cursor: pointer;
+}
+
 .header__button--add-clothes {
   margin: 0 20px 0 0;
   font-weight: 700;
   line-height: 24px;
+  background-color: #f3f3f3;
   border: none;
+}
+
+.header__button--add-clothes:hover {
+  cursor: pointer;
 }
 
 .header__user-container {
@@ -67,6 +81,10 @@
 
 @media screen and (max-width: 750px) {
   .header__button--nav-menu {
+    visibility: visible;
+  }
+
+  .header__button--close {
     visibility: visible;
   }
 
