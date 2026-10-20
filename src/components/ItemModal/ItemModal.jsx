@@ -1,9 +1,9 @@
 import "./ItemModal.css";
 
-function ItemModal({ card, activeModal, onClose }) {
+function ItemModal({ card, isOpen, onClose }) {
   return (
     <div
-      className={`modal${activeModal === "preview" ? " modal--opened" : ""}`}
+      className={`modal${isOpen ? " modal--opened" : ""}`}
       onClick={(evt) => {
         if (evt.target === evt.currentTarget) {
           onClose();

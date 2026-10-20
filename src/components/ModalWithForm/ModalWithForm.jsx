@@ -3,15 +3,16 @@ import "./ModalWithForm.css";
 function ModalWithForm({
   children,
   title,
+  name,
   buttonText,
-  activeModal,
+  isOpen,
   formHasErrors,
   onClose,
   onSubmit,
 }) {
   return (
     <div
-      className={`modal${activeModal === "add-garment" ? " modal--opened" : ""}`}
+      className={`modal modal_type_${name}${isOpen ? " modal--opened" : ""}`}
       onClick={(evt) => {
         if (evt.target === evt.currentTarget) {
           onClose();
@@ -26,7 +27,13 @@ function ModalWithForm({
           aria-label="Close"
           onClick={onClose}
         ></button>
-        <form action="" className="modal__form" noValidate onSubmit={onSubmit}>
+        <form
+          name={name}
+          action=""
+          className="modal__form"
+          noValidate
+          onSubmit={onSubmit}
+        >
           {children}
           <button
             className={`modal__submit-button${formHasErrors ? " modal__submit-button--disabled" : ""}`}
