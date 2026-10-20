@@ -10,6 +10,12 @@ Users can browse clothing recommendations for hot, warm, and cold weather, view 
 
 Currently, WTWR primarily serves as a front-end application. Clothing items are managed through React state and are not saved between page reloads. Additional functionality may be added in future updates.
 
+**Rendered on a 1440p display:**<br>
+![WTWR on Desktop](./src/assets/wtwr_desktop.png)
+
+**Rendered on a 375p display:**<br>
+![WTWR on Mobile](./src/assets/wtwr_mobile.png)
+
 ### How was it built?
 
 WTWR consists of several main components:
